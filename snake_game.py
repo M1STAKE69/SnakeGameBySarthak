@@ -1,17 +1,17 @@
 import pygame
 import random
 
-# Initialize Pygame
+
 pygame.init()
 
-# Colors
+
 light_green = (170, 215, 81)
 dark_green = (162, 209, 73)
 blue = (0, 102, 255)
 red = (255, 0, 0)
 white = (255, 255, 255)
 
-# Screen setup
+
 block_size = 20
 cols = 30
 rows = 20
@@ -20,10 +20,9 @@ height = rows * block_size
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("🐍 Snake Game by Sarthak")
 
-# Font
 font = pygame.font.SysFont("comicsansms", 25)
 
-# Snake and food setup
+
 clock = pygame.time.Clock()
 snake = [(5, 5)]
 snake_dir = (1, 0)
@@ -41,7 +40,7 @@ def draw_snake():
         pygame.draw.rect(screen, blue, rect, border_radius=10)
 
         if i == len(snake) - 1:
-            # Draw eyes on the head based on direction
+            
             cx = x * block_size + block_size // 2
             cy = y * block_size + block_size // 2
             eye_offset = 5
@@ -73,13 +72,13 @@ def show_score():
     screen.blit(score_text, [10, 10])
 
 def game_over():
-    # Dark transparent overlay
+    
     overlay = pygame.Surface((width, height))
     overlay.set_alpha(180)
     overlay.fill((0, 0, 0))
     screen.blit(overlay, (0, 0))
 
-    # Game Over Text
+   
     game_over_font = pygame.font.SysFont("comicsansms", 50, bold=True)
     info_font = pygame.font.SysFont("comicsansms", 28)
 
